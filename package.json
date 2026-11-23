@@ -1,0 +1,21 @@
+{
+  "name": "jusi-markdown",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Markdown reader with character-wise Neovim projection for jusi-neovim",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:host": "node scripts/test-host.mjs",
+    "test:electron": "node scripts/test-electron.mjs"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "highlight.js": "11.11.1",
+    "katex": "0.19.1",
+    "markdown-it": "15.0.3"
+  }
+}

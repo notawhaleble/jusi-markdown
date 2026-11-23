@@ -1,0 +1,273 @@
+:root {
+  color-scheme:light dark;
+  --paper:#faf9f6;
+  --ink:#29332f;
+  --muted:#6b7770;
+  --line:#dedfd7;
+  --panel:#efeee8;
+  --accent:#23745b;
+  font:17px/1.7 system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+}
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;
+}
+
+main {
+  max-width:900px;
+  margin:42px auto;
+  padding:0 48px 120px;
+  overflow-wrap:anywhere;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  line-height:1.25;
+  scroll-margin-top:24px;
+  letter-spacing:-.02em;
+}
+
+h1 {
+  font-size:2.4em;
+  margin:0 0 28px;
+  padding-bottom:24px;
+  border-bottom:1px solid var(--line);
+}
+
+h2 {
+  font-size:1.65em;
+  margin-top:1.7em;
+}
+
+h3 {
+  font-size:1.25em;
+  margin-top:1.6em;
+}
+
+p {
+  margin:1em 0;
+}
+
+a {
+  color:var(--accent);
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+
+a:not([href]) {
+  color:var(--muted);
+}
+
+blockquote {
+  border-left:3px solid var(--accent);
+  padding:0 20px;
+  margin:24px 0;
+  color:var(--muted);
+}
+
+code {
+  font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
+  font-size:.88em;
+  background:var(--panel);
+  border-radius:4px;
+  padding:2px 4px;
+}
+
+pre {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:20px;
+  overflow:auto;
+  line-height:1.6;
+  tab-size:4;
+}
+
+pre code {
+  padding:0;
+  font-size:13px;
+  background:transparent;
+  white-space:pre;
+}
+
+pre .text-run {
+  white-space:pre;
+}
+
+.text-run {
+  white-space:pre-wrap;
+}
+
+.math-run {
+  display:inline-block;
+  white-space:nowrap;
+  overflow-wrap:normal;
+}
+
+.math-display {
+  display:block;
+  overflow:auto;
+  max-width:100%;
+  padding:8px 0;
+  margin:1em 0;
+  text-align:center;
+}
+
+.math-display .katex-display {
+  margin:0;
+}
+
+.math-display .math-run {
+  display:table;
+  margin:0 auto;
+}
+
+.math-error {
+  color:var(--ink);
+  white-space:pre-wrap;
+}
+
+.table-scroll {
+  overflow:auto;
+  margin:24px 0;
+}
+
+table {
+  border-collapse:collapse;
+  min-width:55%;
+  font-size:.95em;
+}
+
+th,td {
+  padding:9px 16px;
+  border:1px solid var(--line);
+  min-width:80px;
+}
+
+th {
+  background:var(--panel);
+  text-align:left;
+}
+
+hr {
+  border:0;
+  border-top:1px solid var(--line);
+  margin:32px 0;
+}
+
+li {
+  margin:5px 0;
+}
+
+img {
+  display:block;
+  max-width:100%;
+  max-height:720px;
+  object-fit:contain;
+  margin:18px auto 6px;
+  border-radius:6px;
+}
+
+.image-caption {
+  display:block;
+  color:var(--muted);
+  font-size:.85em;
+}
+
+.image {
+  display:inline-block;
+  max-width:100%;
+}
+
+#projection {
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:2;
+}
+
+.mark {
+  position:fixed;
+  border-radius:2px;
+  background:#2b956c40;
+}
+
+.mark.cursor {
+  outline:1.5px solid #278963;
+  background:#2b956c38;
+}
+
+.mark.selection {
+  background:#378ace50;
+}
+
+.empty {
+  color:var(--muted);
+}
+
+.hljs-keyword,.hljs-selector-tag,.hljs-literal {
+  color:#925390;
+}
+
+.hljs-string,.hljs-regexp {
+  color:#42774d;
+}
+
+.hljs-number,.hljs-built_in,.hljs-attr {
+  color:#a45f2a;
+}
+
+.hljs-title,.hljs-function {
+  color:#2c6ca0;
+}
+
+.hljs-comment {
+  color:#7a827c;
+  font-style:italic;
+}
+
+@media(prefers-color-scheme:dark) {
+  :root {
+    --paper:#202523;
+    --ink:#dce3dc;
+    --muted:#9caaa1;
+    --line:#3a443e;
+    --panel:#282f2b;
+    --accent:#80c9aa;
+  }
+  .hljs-keyword,.hljs-literal {
+    color:#ce9acd;
+  }
+  .hljs-string,.hljs-regexp {
+    color:#a0ca8a;
+  }
+  .hljs-number,.hljs-built_in,.hljs-attr {
+    color:#dfad7e;
+  }
+  .hljs-title,.hljs-function {
+    color:#8dbfe3;
+  }
+  .mark.cursor {
+    outline-color:#80c9aa;
+    background:#71cf9e45;
+  }
+}
+
+@media(max-width:600px) {
+  main {
+    padding:0 22px 100px;
+    margin-top:28px;
+  }
+  h1 {
+    font-size:1.9em;
+  }
+}
+
+html { overflow-y: scroll; }
+#notice { position: fixed; bottom: 16px; left: 24px; right: 24px; padding: 12px 16px; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; z-index: 5; }
